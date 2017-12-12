@@ -6,11 +6,9 @@ packages <- c('faraway','car','stats', 'MASS','lmtest')
 if (length(setdiff(packages, rownames(installed.packages()))) > 0) {
   install.packages(setdiff(packages, rownames(installed.packages())), dependencies = TRUE)  
 }
-require(faraway)
-require(car)
-require(stats)
-require(MASS)
-require(lmtest)
+for(package in packages){
+  require(package, character.only = TRUE)
+}
 
 #A. (90 pts) From each of the data sets(2) perform the followings:
 #__________________________________________________________________________________________________
